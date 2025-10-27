@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TZRpg.Character;
+using TZRpg.Data;
 
 public class GameHandler : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameHandler : MonoBehaviour
     private void Start()
     {
         characterManager = new CharacterManager();
+        DataManager.LoadFromPlayerPrefs();
 
         if (backButton != null)
             backButton.onClick.AddListener(OnBackClicked);

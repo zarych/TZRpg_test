@@ -20,6 +20,7 @@ public class ButtonHandler : MonoBehaviour
     private void Start()
     {
         characterManager = new CharacterManager();
+        DataManager.LoadFromPlayerPrefs();
 
         if (generateButton != null)
             generateButton.onClick.AddListener(OnGenerateClicked);
@@ -30,6 +31,8 @@ public class ButtonHandler : MonoBehaviour
             playButton.onClick.AddListener(OnPlayClicked);
         else
             Debug.LogError("Play button not assigned!");
+
+        currentCharacter = characterManager.LoadFromSave(characterDisplayArea, characterDisplayText);
     }
 
     private void OnGenerateClicked()

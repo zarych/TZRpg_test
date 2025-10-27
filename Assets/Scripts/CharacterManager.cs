@@ -39,6 +39,32 @@ namespace TZRpg.Character
             return currentCharacterInstance;
         }
 
+        public GameObject LoadFromSave(Transform displayArea, UnityEngine.UI.Text displayText)
+        {
+            var data = DataManager.GetGameData();
+            if (data == null || !data.HasSelectedCharacter)
+                return null;
+
+            var prefab = Resources.Load<GameObject>($"Prefabs/Chara_{data.selectedCharacterId:D2}");
+            if (prefab == null)
+                return null;
+
+            DestroyCurrentInstance();
+            currentCharacterInstance = InstantiateCharacter(prefab, displayArea);
+            UpdateUIText(displayText, $"Selected: {data.selectedCharacterName}");
+            
+            foreach (var charData in availableCharacters)
+            {
+                if (charData.Id == data.selectedCharacterId)
+                {
+                    selectedCharacter = charData;
+                    break;
+                }
+            }
+            
+            return currentCharacterInstance;
+        }
+
         public GameObject LoadSelectedCharacter(Transform spawnArea, UnityEngine.UI.Text infoText)
         {
             var data = DataManager.GetGameData();
