@@ -10,11 +10,22 @@ namespace TZRpg.UI
         [SerializeField] private Text characterInfoText;
 
         private GameObject currentInstance;
+        private CharacterManager manager;
 
         public void Bind(CharacterManager manager)
         {
+            this.manager = manager;
             manager.OnCharacterSelected += UpdateInfoText;
             manager.OnCharacterInstantiated += DisplayCharacter;
+        }
+        
+        private void OnDestroy()
+        {
+            if (manager != null)
+            {
+                manager.OnCharacterSelected -= UpdateInfoText;
+                manager.OnCharacterInstantiated -= DisplayCharacter;
+            }
         }
 
         private void UpdateInfoText(string info)

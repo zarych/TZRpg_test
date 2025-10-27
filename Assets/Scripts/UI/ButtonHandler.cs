@@ -21,5 +21,14 @@ namespace TZRpg.UI
             else
                 Debug.LogError("Play button not assigned!");
         }
+        
+        private void OnDestroy()
+        {
+            if (generateButton != null)
+                generateButton.onClick.RemoveListener(UIEvents.RaiseGenerateCharacterRequested);
+            
+            if (playButton != null)
+                playButton.onClick.RemoveListener(UIEvents.RaisePlayButtonClicked);
+        }
     }
 }

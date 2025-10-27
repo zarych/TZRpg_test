@@ -40,6 +40,12 @@ namespace TZRpg.Game
             infoText.text = $"Playing as: {data.selectedCharacterName}";
         }
 
+        private void OnDestroy()
+        {
+            if (backButton != null)
+                backButton.onClick.RemoveListener(OnBackClicked);
+        }
+
         private void OnBackClicked()
         {
             SceneLoader.LoadCharacterSelector();
