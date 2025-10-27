@@ -651,12 +651,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1224412459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b4b94868b9344dfdb24cc3a84a51509, type: 3}
+  m_Script: {fileID: 11500000, guid: 69c60959dc4cf4b8ab07519404b87e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 729807948}
-  characterInfoText: {fileID: 1458370880}
-  characterSpawnArea: {fileID: 2035250606}
+  infoText: {fileID: 1458370880}
+  spawnArea: {fileID: 2035250606}
 --- !u!1 &1458370879
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,12 +40,17 @@
     <Analyzer Include="/Users/zarych/Documents/Unity_Workspace/2022.3.7f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/CharacterData.cs" />
-     <Compile Include="Assets/Scripts/GameData.cs" />
-     <Compile Include="Assets/Scripts/GameHandler.cs" />
-     <Compile Include="Assets/Scripts/CharacterManager.cs" />
-     <Compile Include="Assets/Scripts/ButtonHandler.cs" />
-     <Compile Include="Assets/Scripts/DataManager.cs" />
+     <Compile Include="Assets/Scripts/Character/CharacterManager.cs" />
+     <Compile Include="Assets/Scripts/UI/CharacterDisplay.cs" />
+     <Compile Include="Assets/Scripts/UI/MainInitializer.cs" />
+     <Compile Include="Assets/Scripts/UI/ButtonHandler.cs" />
+     <Compile Include="Assets/Scripts/Character/CharacterData.cs" />
+     <Compile Include="Assets/Scripts/Data/GameData.cs" />
+     <Compile Include="Assets/Scripts/Game/GameHandler.cs" />
+     <Compile Include="Assets/Scripts/Data/DataManager.cs" />
+     <Compile Include="Assets/Scripts/Core/Events/UIEvents.cs" />
+     <Compile Include="Assets/Scripts/Game/SceneLoader.cs" />
+     <Compile Include="Assets/Scripts/Character/CharacterSelectionController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Users/zarych/Documents/Unity_Workspace/2022.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
